@@ -1,0 +1,21 @@
+<table class="table">
+  <tr>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Discount</th>
+    <th>Category</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.title }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.price | currency : "EUR" }}</td>
+    <td>{{ product.discountPercentage }}</td>
+    <td>{{ product.category }}</td>
+    <td>
+      <button [routerLink]="['/liked', product.id]" class="btn btn-warning">
+        Like
+      </button>
+    </td>
+  </tr>
+</table>
